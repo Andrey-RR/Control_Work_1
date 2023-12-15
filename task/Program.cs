@@ -2,6 +2,7 @@
 int numbsymbol = Prompt ("Введите предельное количество символов : ");
 string[] stringarray;
 stringarray = FillArray(length);
+PrintArray(stringarray);
 
 int Prompt(string message)
 {
@@ -20,4 +21,14 @@ string[] FillArray (int length)
         stringarray[i] = Console.ReadLine();
         }
     return stringarray;
+}
+
+void PrintArray (string[] array)
+{
+    Console.WriteLine("Массив элементов:");
+    for(int i = 0; i < array.Length; i++)
+    {
+        Console.Write($"{array[i]}" + "  ");
+    }
+   
 }
