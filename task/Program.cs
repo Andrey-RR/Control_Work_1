@@ -3,6 +3,8 @@ int numbsymbol = Prompt ("Введите предельное количеств
 string[] stringarray;
 stringarray = FillArray(length);
 PrintArray(stringarray);
+Console.WriteLine();
+PrintFinalArray(stringarray, numbsymbol);
 
 int Prompt(string message)
 {
@@ -31,4 +33,19 @@ void PrintArray (string[] array)
         Console.Write($"{array[i]}" + "  ");
     }
    
+}
+
+void PrintFinalArray (string[] array, int numb)
+{
+    Console.WriteLine($"Элементы, длина которых меньше, либо равна {numb} символам :");
+    string[] finalarray=new string[array.GetLength(0)];
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        if (array[i].Length <= numb && array[i].Length > 0)
+        {
+        finalarray[i]=array[i];
+        Console.Write($"{finalarray[i]}" + "  "); 
+        }
+               
+     }
 }
